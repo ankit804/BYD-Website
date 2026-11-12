@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --font-color: #171717;
+    --font-secondary: #666666;
+    --font-light: #FFFFFF;
+    --navbar-bg: #FFFFFF;
+    --navbar-text: #171717;
+    --bg-color: #FFFFFF;
+    --section-bg: #F5F5F5;
+    --primary-color: #E60012;
+    --border-shaow: rgba(0,0,0,0.1);
+    --font-fam: 'Inter', sans-serif;
+    --radius: 10px;
+    --radius-xl: (var(--radius)*10);
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
