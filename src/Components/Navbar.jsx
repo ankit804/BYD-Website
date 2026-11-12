@@ -13,9 +13,9 @@ function Navbar() {
                 <h1 className="logo-text">BYD | <span>Build Your Dream.</span></h1>
             </div>
             <ul className="nav-list">
-                <NavLink to="/"><span>{<FaHome/>}</span>Home</NavLink >
+                <NavLink to="/"><span className="icon">{<FaHome/>}</span >Home</NavLink >
                     <NavLink to="/about"><span className="icon">{<IoIosInformationCircleOutline/>}</span>About</NavLink >
-                        <NavLink to="/contact"><span>{<IoMdContacts/>}</span>Contact</NavLink >
+                        <NavLink to="/contact"><span className="icon">{<IoMdContacts/>}</span>Contact</NavLink >
         </ul>
         </nav>
     </>)
