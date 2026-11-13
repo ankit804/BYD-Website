@@ -73,7 +73,7 @@
 
     .logo {
         font-weight: 400;
-        
+
         letter-spacing: -1px;
     }
     .logo h1{
@@ -82,6 +82,32 @@
     .nav-list {
         width: 50%;
         gap: 3%;
+    }
+
+    .nav-list a {
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px){
+    .navbar{
+        min-height: 5vh;
+        padding: 5px 5px;
+    }
+
+    .logo {
+        font-weight: 400;
+                order: 1;
+        letter-spacing: -1px;
+    }
+    .logo h1{
+        font-size: 18px;
+    }
+    .nav-list {
+        width: 20%;
+        order: 2;
+        gap: 1%;
     }
 
     .nav-list a {
