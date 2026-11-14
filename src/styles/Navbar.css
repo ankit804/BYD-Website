@@ -6,10 +6,12 @@
     align-items: center;
     padding: 5px 20px;
     box-shadow: 0 0 10px var(--border-shaow);
-    background: linear-gradient(100deg,
-            #FFFFFF 10%,
-            #126B50 55%,
-            #0B3D32 10%);
+    background: linear-gradient(
+        100deg,
+        #FFFFFF 10%,
+        #126B50 55%,
+        #0B3D32 100%
+    );
 }
 
 .logo {
@@ -40,10 +42,12 @@
     font-size: 18px;
     padding: 8px 14px;
     border-radius: 6px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
+
     transition:
         color 0.3s ease,
         background 0.3s ease;
@@ -63,22 +67,32 @@
     transform: translateY(-2px);
 }
 
+.icon {
+    transition: transform 0.3s ease;
+}
+
+
+.hamburger {
+    display: none;
+}
 
 
 @media (max-width: 1050px) {
+
     .navbar {
         min-height: 7vh;
-        padding: 5px 5px;
+        padding: 5px 10px;
     }
 
     .logo {
         font-weight: 400;
-
         letter-spacing: -1px;
     }
-    .logo h1{
+
+    .logo h1 {
         font-size: 18px;
     }
+
     .nav-list {
         width: 50%;
         gap: 3%;
@@ -90,28 +104,84 @@
     }
 }
 
-@media (max-width: 500px){
-    .navbar{
-        min-height: 5vh;
-        padding: 5px 5px;
+@media (max-width: 500px) {
+
+    .navbar {
+        min-height: 7vh;
+        padding: 5px 15px;
+        position: relative;
     }
 
     .logo {
-        font-weight: 400;
-                order: 1;
+        order: 1;
         letter-spacing: -1px;
     }
-    .logo h1{
+
+    .logo h1 {
         font-size: 18px;
     }
-    .nav-list {
-        width: 20%;
+
+
+
+    .hamburger {
+        display: flex;
         order: 2;
-        gap: 1%;
+
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 25px;
+
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        margin: 0;
+        padding: 20px 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+
+        background: linear-gradient(
+            135deg,
+            #126B50,
+            #0B3D32
+        );
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+
+    .nav-list.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translateY(0);
     }
 
     .nav-list a {
-        font-weight: 400;
-        font-size: 16px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .nav-list a.active {
+        color: rgb(126, 237, 147);
     }
 }
