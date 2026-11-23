@@ -4,14 +4,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
+    padding: 5px 5%;
     box-shadow: 0 0 10px var(--border-shaow);
-    background: linear-gradient(
-        100deg,
-        #FFFFFF 10%,
-        #126B50 55%,
-        #0B3D32 100%
-    );
+    background: none
 }
 
 .logo {
@@ -31,7 +26,7 @@
     width: 60%;
     display: flex;
     justify-content: flex-end;
-    gap: 5%;
+    gap: 2%;
 }
 
 .nav-list a {
@@ -59,7 +54,7 @@
 }
 
 .nav-list a.active {
-    color: rgb(126, 237, 147);
+    color: rgb(24, 54, 30);
     font-weight: 800;
 }
 
@@ -74,6 +69,25 @@
 
 .hamburger {
     display: none;
+}
+
+.bookbtn{
+   padding: 5px 15px; 
+   border-radius: var(--radius);
+   border: 1px solid rgb(89, 248, 89);
+   background: none;
+   color: white;
+   font-family: var(--font-fam);
+   cursor: pointer;
+   transition: background 0.5s ease;
+   
+
+}
+
+.bookbtn:hover{
+    background-color: aliceblue;
+    color: gray;
+    border: none;
 }
 
 
@@ -151,11 +165,9 @@
         align-items: center;
         gap: 15px;
 
-        background: linear-gradient(
-            135deg,
-            #126B50,
-            #0B3D32
-        );
+        background: linear-gradient(135deg,
+                #126B50,
+                #0B3D32);
 
         opacity: 0;
         visibility: hidden;
@@ -179,6 +191,10 @@
     .nav-list a {
         font-size: 17px;
         font-weight: 500;
+    }
+
+    .nav-list a:hover{
+        padding: 100% 100%;
     }
 
     .nav-list a.active {

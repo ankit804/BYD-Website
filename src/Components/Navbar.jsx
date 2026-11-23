@@ -32,7 +32,7 @@ function Navbar() {
                 {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
 
-            {/* Navigation Links */}
+
             <ul className={`nav-list ${menuOpen ? "active" : ""}`}>
 
                 <NavLink to="/" onClick={closeMenu}>
@@ -55,6 +55,9 @@ function Navbar() {
                     </span>
                     Contact
                 </NavLink>
+
+                <button className="bookbtn">Book Now</button>
+
 
             </ul>
 
