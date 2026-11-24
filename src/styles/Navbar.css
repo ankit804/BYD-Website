@@ -1,203 +1,150 @@
 .navbar {
-    max-width: 100%;
-    min-height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 5%;
-    box-shadow: 0 0 10px var(--border-shaow);
-    background: none
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 5.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem var(--space-page);
+  background: linear-gradient(180deg, rgb(0 0 0 / 34%), transparent);
 }
 
 .logo {
-    font-family: var(--font-fam);
-    color: var(--navbar-text);
-    font-weight: 300;
-    letter-spacing: -1.5px;
-    flex: 1;
+  flex: 0 1 auto;
+  color: var(--color-text);
+  letter-spacing: -0.06em;
 }
 
-.logo span {
-    font-weight: 300;
-    color: var(--primary-color);
+.logo-text {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 700;
+}
+
+.logo-text span {
+  color: var(--color-accent);
+  font-size: 0.72em;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 .nav-list {
-    width: 60%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 2%;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.35rem, 1.5vw, 1.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-list a {
-    color: white;
-    text-decoration: none;
-    font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 18px;
-    padding: 8px 14px;
-    border-radius: 6px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-
-    transition:
-        color 0.3s ease,
-        background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
-.nav-list a:hover {
-    background-color: #f2f2f2;
-    color: green;
-}
-
+.nav-list a:hover,
 .nav-list a.active {
-    color: rgb(24, 54, 30);
-    font-weight: 800;
+  color: var(--color-accent);
+  background: rgb(255 255 255 / 9%);
 }
 
-.nav-list a:hover .icon {
-    transform: translateY(-2px);
+.nav-list .icon {
+  display: inline-flex;
+  font-size: 1.05em;
 }
 
-.icon {
-    transition: transform 0.3s ease;
+.bookbtn {
+  min-height: 2.75rem;
+  padding: 0.6rem 1.15rem;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
+.bookbtn:hover {
+  background: #fff;
+  color: #172019;
+}
 
 .hamburger {
-    display: none;
+  display: none;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: rgb(0 0 0 / 20%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
-.bookbtn{
-   padding: 5px 15px; 
-   border-radius: var(--radius);
-   border: 1px solid rgb(89, 248, 89);
-   background: none;
-   color: white;
-   font-family: var(--font-fam);
-   cursor: pointer;
-   transition: background 0.5s ease;
-   
+@media (max-width: 700px) {
+  .navbar {
+    min-height: 4.75rem;
+    padding-inline: max(1rem, var(--space-page));
+  }
 
+  .hamburger {
+    display: inline-flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: calc(100% - 0.25rem);
+    right: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: rgb(16 23 20 / 96%);
+    box-shadow: var(--shadow-nav);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+    transition: opacity 180ms ease, transform 180ms ease;
+    visibility: hidden;
+  }
+
+  .nav-list.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .nav-list a {
+    min-height: 2.75rem;
+    padding-inline: 0.85rem;
+  }
+
+  .bookbtn {
+    margin-top: 0.25rem;
+  }
 }
 
-.bookbtn:hover{
-    background-color: aliceblue;
-    color: gray;
-    border: none;
-}
-
-
-@media (max-width: 1050px) {
-
-    .navbar {
-        min-height: 7vh;
-        padding: 5px 10px;
-    }
-
-    .logo {
-        font-weight: 400;
-        letter-spacing: -1px;
-    }
-
-    .logo h1 {
-        font-size: 18px;
-    }
-
-    .nav-list {
-        width: 50%;
-        gap: 3%;
-    }
-
-    .nav-list a {
-        font-weight: 400;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .navbar {
-        min-height: 7vh;
-        padding: 5px 15px;
-        position: relative;
-    }
-
-    .logo {
-        order: 1;
-        letter-spacing: -1px;
-    }
-
-    .logo h1 {
-        font-size: 18px;
-    }
-
-
-
-    .hamburger {
-        display: flex;
-        order: 2;
-
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 25px;
-
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-
-    .nav-list {
-        position: absolute;
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-        margin: 0;
-        padding: 20px 0;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-
-        background: linear-gradient(135deg,
-                #126B50,
-                #0B3D32);
-
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        transform: translateY(-10px);
-
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
-
-
-    .nav-list.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-
-        transform: translateY(0);
-    }
-
-    .nav-list a {
-        font-size: 17px;
-        font-weight: 500;
-    }
-
-    .nav-list a:hover{
-        padding: 100% 100%;
-    }
-
-    .nav-list a.active {
-        color: rgb(126, 237, 147);
-    }
+@media (prefers-reduced-motion: reduce) {
+  .nav-list,
+  .nav-list a,
+  .bookbtn {
+    transition: none;
+  }
 }

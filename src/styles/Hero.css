@@ -1,80 +1,158 @@
 .hero {
-    margin: 0 120px;
-    margin-top: 270px;
-    max-width: 80%;
+  display: flex;
+  min-height: calc(100svh - 5.5rem);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem var(--space-page) 2rem;
 }
 
 .hero-text {
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 50px;
+  max-width: 54rem;
+  color: var(--color-text);
 }
 
 .hero-text .one {
-    font-weight: 800;
-    color: rgb(163, 200, 156);
-    font-family: var(--font-fam);
-    text-shadow: 5px 5px 20px rgba(117, 19, 19, 0.7);
+  max-width: 13ch;
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: clamp(2.65rem, 7.5vw, 6.75rem);
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.99;
+  text-wrap: balance;
+  text-shadow: 0 0.2rem 2rem rgb(0 0 0 / 34%);
+}
+
+.hero-highlight {
+  color: var(--color-highlight);
+}
+
+.hero-text .two {
+  max-width: 42rem;
+  margin: 1.5rem 0 0;
+  color: rgb(255 255 255 / 88%);
+  font-size: clamp(1rem, 1.65vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 .hero-explore {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    width: fit-content;
-    margin-top: 70px;
-    padding: 10px 8px;
-    padding-left: 30px;
-    border-radius: 60px;
-    background-color: white;
-    cursor: pointer;
+  display: inline-flex;
+  min-height: 3.5rem;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2.25rem;
+  padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: #172019;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease;
 }
 
-.hero-explore p {
-    color: rgb(70, 6, 6);
-    font-size: 20px;
-    font-weight: 500;
+.hero-explore:hover {
+  transform: translateY(-2px);
+  background: #eef6ec;
+}
+
+.hero-explore span {
+  display: inline-flex;
+  align-items: center;
 }
 
 .hero-dot-play {
-    margin-top: 120px;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: clamp(3.5rem, 10vh, 7rem);
 }
 
 .hero-dots {
-    display: flex;
-    align-items: center;
-    gap: 23px;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-dot-button {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
 }
 
 .hero-dot {
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 7.5px;
-    cursor: pointer;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 72%);
+  transition: width 180ms ease, background-color 180ms ease;
 }
 
-.hero-dot-orange {
-    width: 15px;
-    height: 15px;
-    background: orange;
-    border-radius: 7.5px;
-    cursor: pointer;
+.hero-dot-button[aria-current="true"] .hero-dot {
+  width: 1.8rem;
+  background: var(--color-accent);
 }
 
 .hero-play {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-   
-    justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
-.hero-play span {
-    font-size: 35px;
-    cursor: pointer;
+.hero-play button {
+  display: inline-flex;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: rgb(0 0 0 / 20%);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: background-color 180ms ease;
+}
+
+.hero-play button:hover {
+  background: rgb(255 255 255 / 20%);
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: calc(100svh - 4.75rem);
+    justify-content: flex-end;
+    padding-top: 2rem;
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+
+  .hero-text .one {
+    font-size: clamp(2.7rem, 12vw, 4.5rem);
+  }
+
+  .hero-text .two {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .hero-explore {
+    margin-top: 1.5rem;
+  }
+
+  .hero-dot-play {
+    margin-top: 2.5rem;
+  }
 }
